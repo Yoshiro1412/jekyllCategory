@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h1>Hello world</h1>
+
+<section class="articles">
+<div class="categories">
+    <label for="all">all</label>
+    {% for category in site.categories %}
+    <label for="{{- category | first -}}">{{- category | first -}}</label>
+    {% endfor %}
+</div>
+
+<div>
+    <input type="radio" name="category" id="all" checked>
+    {% for category in site.categories %}
+    <input type="radio" name="category" id="{{- category | first -}}">
+    <div class="posts">
+        {%- for post in category.last -%}
+            <a href="{{- post.url -}}">{{ post.title }}</a>    
+        {%- endfor -%}
+    </div>
+    {% endfor %}
+</div>
+
+</section>
+
+
+

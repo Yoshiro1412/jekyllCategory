@@ -1,0 +1,15 @@
+input[type=radio]{
+    display: none;
+}
+
+input[type=radio] + .posts{
+    display: none;
+}
+
+input[type=radio]:checked + .posts{
+    display: block;
+}
+
+#all:checked ~ .posts{
+    display: block;
+}
