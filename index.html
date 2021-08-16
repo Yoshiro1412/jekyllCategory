@@ -18,7 +18,7 @@ layout: default
     <input type="radio" name="category" id="{{- category | first -}}">
     <div class="posts">
         {%- for post in category.last -%}
-            <a href="{{- post.url | relative_url-}}">{{ post.title }}</a>    
+            <a href="{{- post.url | absolute_url-}}">{{ post.title }}</a>    
         {%- endfor -%}
     </div>
     {% endfor %}
